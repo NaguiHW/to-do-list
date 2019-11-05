@@ -20,11 +20,14 @@ button {
   color: white; }
 
 .new-project-button {
-  background: #008600;
   background: blue; }
+  .new-project-button:active {
+    background-color: #000086; }
 
 .post-project-button {
   background: #008600; }
+  .post-project-button:active {
+    background-color: #004400; }
 
 input, textarea {
   width: 50%;
@@ -32,6 +35,32 @@ input, textarea {
   border: none;
   border-radius: 4px; }
 
+p {
+  margin: 0; }
+
 div {
   padding: 10px 0; }
+
+i {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+  color: white; }
+
+.new-project i {
+  background: #008600; }
+  .new-project i:hover {
+    background-color: #004400; }
+
+textarea {
+  resize: none; }
+
+.project i {
+  background-color: red; }
+  .project i:hover {
+    background-color: #770101; }
+
+.checkbox {
+  padding: 0; }
 

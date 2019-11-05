@@ -9,7 +9,6 @@
 .content {
   margin: 0 auto;
   width: 50%;
-  border: 1px solid black;
   text-align: center;
 }
 
@@ -76,8 +75,13 @@ textarea {
 .project {
   i {
     background-color: red;
+    margin-top: 10px;
     &:hover {
       background-color: rgb(119, 1, 1);
     }
   }
+}
+
+.checkbox {
+  width: 0;
 }
