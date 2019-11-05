@@ -21,14 +21,20 @@ button {
   width: 30%;
   padding: 10px;
   color: white;
-  }
+}
+
 .new-project-button {
-  background: rgb(0, 134, 0);
   background: blue;
+  &:active {
+    background-color: rgb(0, 0, 134);
+  }
 }
 
 .post-project-button {
   background: rgb(0, 134, 0);
+  &:active {
+    background-color: rgb(0, 68, 0);
+  }
 }
 
 input, textarea {
@@ -38,6 +44,26 @@ input, textarea {
   border-radius: 4px;
 }
 
+p {
+  margin: 0;
+}
+
 div {
   padding: 10px 0;
+}
+
+i {
+  border: 1px solid black;
+  padding: 5px;
+  border-radius: 100%;
+  cursor: pointer;
+  color: white;
+  background: rgb(0, 134, 0);
+  &:hover {
+    background-color: rgb(0, 68, 0);
+  }
+}
+
+textarea {
+  resize: none;
 }
