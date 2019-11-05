@@ -12,9 +12,7 @@ let clearForm = () => {
   date.value = '';
   priority.value = '';
   taskRemove.innerHTML = ''
-  counter();
-  
-  
+  counter();  
 }
 
 export { clearForm }

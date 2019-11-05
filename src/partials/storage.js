@@ -22,10 +22,9 @@ class Project {
 
 let storage = () => {
   let newProject = new Project(title.value, description.value, date.value, priority.value, task);
+  localStorage.setItem('newProject', JSON.stringify(newProject))
   console.log(newProject);
   taskArray = [];
 }
 
 export {storage}
-
-// childElementCount
