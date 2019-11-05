@@ -29,6 +29,13 @@ button {
   }
 }
 
+.close-form {
+  background: red;
+  &:active {
+    background-color: rgb(119, 1, 1);
+  }
+}
+
 .post-project-button {
   background: rgb(0, 134, 0);
   &:active {
