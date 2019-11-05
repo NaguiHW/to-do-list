@@ -7,7 +7,6 @@
 .content {
   margin: 0 auto;
   width: 50%;
-  border: 1px solid black;
   text-align: center; }
 
 button {
@@ -23,6 +22,11 @@ button {
   background: blue; }
   .new-project-button:active {
     background-color: #000086; }
+
+.close-form {
+  background: red; }
+  .close-form:active {
+    background-color: #770101; }
 
 .post-project-button {
   background: #008600; }
@@ -57,10 +61,22 @@ textarea {
   resize: none; }
 
 .project i {
-  background-color: red; }
+  background-color: red;
+  margin-top: 10px; }
   .project i:hover {
     background-color: #770101; }
 
 .checkbox {
-  padding: 0; }
+  width: 0; }
+
+.task-input {
+  margin: 10px; }
+
+#priority {
+  width: 5%;
+  padding: 0;
+  cursor: pointer; }
+
+.priority p {
+  padding-bottom: 10px; }
 
