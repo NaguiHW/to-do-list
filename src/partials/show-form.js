@@ -14,6 +14,7 @@ let showForm = () => {
     showButton.addEventListener('click', (e) => {
             if (e.target.innerText === 'Close Form'){
                 form.classList.add('hide')
+                showButton.innerText = 'CreateProject';
                 }else if (e.target.innerText === 'Create Project') {
                 form.classList.remove('hide');
                 showButton.innerText =  'Close Form';
