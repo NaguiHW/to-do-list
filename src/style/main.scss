@@ -92,3 +92,17 @@ textarea {
 .checkbox {
   width: 0;
 }
+
+.task-input {
+  margin: 10px;
+}
+
+#priority {
+  width: 5%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.priority p {
+  padding-bottom: 10px;
+}
