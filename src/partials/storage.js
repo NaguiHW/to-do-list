@@ -12,17 +12,18 @@ class Project {
     this.date = date;
     this.priopriority = priority;
     if (task.childElementCount > 0) {
-      this.task = task
       for (let i = 0; i<task.childElementCount; i++){
         taskArray.push(document.getElementById(i).value)
       }
+      this.task = taskArray;
     }
   }
 }
 
 let storage = () => {
   let newProject = new Project(title.value, description.value, date.value, priority.value, task);
-  console.log(taskArray)
+  console.log(newProject);
+  taskArray = [];
 }
 
 export {storage}
