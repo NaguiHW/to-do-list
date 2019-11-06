@@ -23,6 +23,7 @@ let showProjects = () => {
         deleteProject(delButton);
       });
       let project = document.createElement('div');
+      project.classList.add('project')
       let title = document.createElement('h3');
       title.innerHTML = element.title;
       let description = document.createElement('p');
@@ -50,9 +51,34 @@ let showProjects = () => {
 
 let storedProjects = () => {
   allProjects = DataBase.getProjects();
-  allProjects[-1]
-  projects.innerHTML += `${allProjects[allProjects.length-1].title}`;
+  let lastProject = allProjects[allProjects.length-1]
+  let project = document.createElement('div');
+  let title = document.createElement('h3');
+  title.innerHTML = lastProject.title;
+  let description = document.createElement('p');
+  description.innerHTML = lastProject.description;
+  let date = document.createElement('p');
+  date.innerHTML = lastProject.date;
+  let toDoList = document.createElement('ul');
+  for (let i = 0; i < lastProject.task.length; i++) {
+    let item = document.createElement('li');
+    item.innerHTML = lastProject.task[i].task;
+    toDoList.appendChild(item);
+  }
+  let delButton = document.createElement('i');
+  delButton.setAttribute('class', 'fas fa-trash')
+  delButton.addEventListener('click', () => {
+    deleteProject(delButton);
+  });
+  project.appendChild(title);
+  project.appendChild(description);
+  project.appendChild(toDoList);
+  project.appendChild(date);
+  project.appendChild(delButton);
+  projects.appendChild(project);
+
 }
+
 
 export {showProjects, storedProjects}
 

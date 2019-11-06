@@ -1,4 +1,3 @@
-
 let deleteProject = e => {
   // window.addEventListener('click', (e) => {
   //   if (e.target.innerHTML == '' && e.target.getElementsByClassName !== 'fa-plus'){
@@ -6,7 +5,9 @@ let deleteProject = e => {
   //   }
   
   // })
-  console.log(e);
+  let parentDiv = document.getElementsByClassName('project');
+  e.remove(parentDiv)
+  console.log(e.parentNode);
 }
 
 export {deleteProject}
