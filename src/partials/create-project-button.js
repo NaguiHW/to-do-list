@@ -1,5 +1,6 @@
 import {storage} from './storage';
 import {clearForm} from './clear-form';
+import {storedProjects} from  './show-projects'
 
 let createProjectButton = document.querySelector('.post-project-button');
 const showButton = document.querySelector('.new-project-button');
@@ -12,6 +13,7 @@ let createProject = () => {
     showButton.innerText = 'Create Project';
     showButton.classList.remove('close-form')
     clearForm();
+    storedProjects();
   });
 
 }

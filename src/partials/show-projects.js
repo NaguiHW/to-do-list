@@ -9,16 +9,28 @@ let showProjects = () => {
     allProjects = [];
   }else{
     allProjects.forEach(element => {
-      if(element.status){
-        projects.innerHTML += `<div class="alert alert-success" role="alert"><i class="material-icons float-left mr-2">accessibility</i><b>${element.actividad}</b> - ${element.estado}<span class="float-right"><i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`
-      }else{
-        projects.innerHTML += `Status False`
-      }
+      projects.innerHTML += `<div class="project">
+      <h3>${element.title}</h3>
+      <p>${element.description}</p>
+      <ul>
+        <li>${element.task[0].task} <input type="checkbox" name="task" class="checkbox"> </li>
+        <li>Task 2 <input type="checkbox" name="task" class="checkbox"> </li>
+        <li>Task 3 <input type="checkbox" name="task" class="checkbox"> </li>
+      </ul>
+      <p>Due Date: 12/12/2019</p>
+      <i class="fas fa-trash"></i>
+    </div>`;
     });
   }
 }
 
-export {showProjects}
+let storedProjects = () => {
+  allProjects = DataBase.getProjects();
+  allProjects[-1]
+  projects.innerHTML += `${allProjects[allProjects.length-1].title}`;
+}
+
+export {showProjects, storedProjects}
 
 // // Variables globales
 // ​
