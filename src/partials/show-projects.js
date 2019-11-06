@@ -9,13 +9,15 @@ let showProjects = () => {
     allProjects = [];
   }else{
     allProjects.forEach(element => {
+      let toDoList = '';
+      for (let i = 0; i < element.task.length; i++) {
+        toDoList += `<li>${element.task[i].task}</li>`
+      }
       projects.innerHTML += `<div class="project">
       <h3>${element.title}</h3>
       <p>${element.description}</p>
       <ul>
-        <li>${element.task[0].task} <input type="checkbox" name="task" class="checkbox"> </li>
-        <li>Task 2 <input type="checkbox" name="task" class="checkbox"> </li>
-        <li>Task 3 <input type="checkbox" name="task" class="checkbox"> </li>
+        ${toDoList}
       </ul>
       <p>Due Date: 12/12/2019</p>
       <i class="fas fa-trash"></i>
@@ -145,7 +147,3 @@ export {showProjects, storedProjects}
 //   }
 // ​
 // });
-// Contraer
-
-
-//
