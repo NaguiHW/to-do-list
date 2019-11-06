@@ -1,4 +1,5 @@
-import {DataBase} from './storage'
+import {DataBase} from './storage';
+import {deleteProject} from './delete-project';
 let projects = document.querySelector('.projects');
 let allProjects = [];
 
@@ -9,19 +10,40 @@ let showProjects = () => {
     allProjects = [];
   }else{
     allProjects.forEach(element => {
-      let toDoList = '';
+      let toDoList = document.createElement('ul');
       for (let i = 0; i < element.task.length; i++) {
-        toDoList += `<li>${element.task[i].task}</li>`
+        let item = document.createElement('li');
+        item.innerHTML = element.task[i].task;
+        toDoList.appendChild(item);
+        //toDoList += `<li>${element.task[i].task}</li>`
       }
-      projects.innerHTML += `<div class="project">
-      <h3>${element.title}</h3>
-      <p>${element.description}</p>
-      <ul>
-        ${toDoList}
-      </ul>
-      <p>Due Date: 12/12/2019</p>
-      <i class="fas fa-trash"></i>
-    </div>`;
+      let delButton = document.createElement('i');
+      delButton.setAttribute('class', 'fas fa-trash')
+      delButton.addEventListener('click', () => {
+        deleteProject(delButton);
+      });
+      let project = document.createElement('div');
+      let title = document.createElement('h3');
+      title.innerHTML = element.title;
+      let description = document.createElement('p');
+      description.innerHTML = element.description;
+      let date = document.createElement('p');
+      date.innerHTML = element.date;
+      project.appendChild(title);
+      project.appendChild(description);
+      project.appendChild(toDoList);
+      project.appendChild(date);
+      project.appendChild(delButton);
+      projects.appendChild(project);
+      // projects.innerHTML += `<div class="project">
+      //   <h3>${element.title}</h3>
+      //   <p>${element.description}</p>
+      //   <ul>
+      //     ${toDoList}
+      //   </ul>
+      //   <p>${element.date}</p>
+      // </div>`;
+      // projects.appendChild(delButton);
     });
   }
 }
