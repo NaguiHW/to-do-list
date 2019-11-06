@@ -5,6 +5,31 @@ let priority = document.querySelector('#priority');
 let task = document.querySelector('.new-task');
 let taskArray = []
 
+class DataBase {
+  static getProjects() {
+    let allProjects = [];
+    if (localStorage.getItem('project') === null) {
+      allProjects = [];
+    } else {
+      allProjects = JSON.parse(localStorage.getItem('project'));
+    }
+    return allProjects;
+  }
+
+  static addProject(project) {
+    const projects = DataBase.getProjects();
+    projects.push(project);
+    localStorage.setItem('project', JSON.stringify(projects));
+  }
+}
+
+class ToDo {
+  constructor (task) {
+    this.task = task;
+    this.status = false;
+  }
+}
+
 class Project {
   constructor(title, description, date, priority, task) {
     this.title = title;
@@ -13,7 +38,8 @@ class Project {
     this.priopriority = priority;
     if (task.childElementCount > 0) {
       for (let i = 0; i<task.childElementCount; i++){
-        taskArray.push(document.getElementById(i).value)
+        let todo = new ToDo(document.getElementById(i).value);
+        taskArray.push(todo);
       }
       this.task = taskArray;
     }
@@ -22,9 +48,9 @@ class Project {
 
 let storage = () => {
   let newProject = new Project(title.value, description.value, date.value, priority.value, task);
-  localStorage.setItem('newProject', JSON.stringify(newProject))
+  DataBase.addProject(newProject);
   console.log(newProject);
   taskArray = [];
 }
 
-export {storage}
+export {storage, DataBase}
