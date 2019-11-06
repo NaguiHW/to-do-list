@@ -1,8 +1,10 @@
-let deleteButton = document.querySelector('.fa-trash')
 
 let deleteProject = () => {
-  deleteButton.addEventListener('click', (e) => {
-    console.log(e.target);
+  window.addEventListener('click', (e) => {
+    if (e.target.innerHTML == '' && e.target.getElementsByClassName !== 'fa-plus'){
+      console.log('delete')
+    }
+  
   })
 }
 
