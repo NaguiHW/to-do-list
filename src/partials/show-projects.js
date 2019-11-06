@@ -1,6 +1,6 @@
 import {DataBase} from './storage';
 import {deleteProject} from './delete-project';
-let projects = document.querySelector('.projects');
+let projectList = document.querySelector('#project-list');
 let allProjects = [];
 
 let showProjects = () => {
@@ -35,16 +35,8 @@ let showProjects = () => {
       project.appendChild(toDoList);
       project.appendChild(date);
       project.appendChild(delButton);
-      projects.appendChild(project);
-      // projects.innerHTML += `<div class="project">
-      //   <h3>${element.title}</h3>
-      //   <p>${element.description}</p>
-      //   <ul>
-      //     ${toDoList}
-      //   </ul>
-      //   <p>${element.date}</p>
-      // </div>`;
-      // projects.appendChild(delButton);
+      let newRow = projectList.insertRow(-1);
+      newRow.appendChild(project);
     });
   }
 }
@@ -53,6 +45,7 @@ let storedProjects = () => {
   allProjects = DataBase.getProjects();
   let lastProject = allProjects[allProjects.length-1]
   let project = document.createElement('div');
+  project.classList.add('project')
   let title = document.createElement('h3');
   title.innerHTML = lastProject.title;
   let description = document.createElement('p');
@@ -75,8 +68,8 @@ let storedProjects = () => {
   project.appendChild(toDoList);
   project.appendChild(date);
   project.appendChild(delButton);
-  projects.appendChild(project);
-
+  let newRow = projectList.insertRow(-1);
+  newRow.appendChild(project);
 }
 
 
