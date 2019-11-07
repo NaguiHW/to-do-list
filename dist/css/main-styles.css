@@ -60,6 +60,9 @@ i {
 textarea {
   resize: none; }
 
+.projects {
+  width: 100%; }
+
 .project i {
   background-color: red;
   margin-top: 10px; }
