@@ -14,8 +14,10 @@ let errors = document.querySelector('.errors');
 
 let errorForm = () => {
   let message = document.createElement('p');
+  message.setAttribute('class', 'notification is-danger')
   message.innerHTML = 'Please fill the empty fields.'
   errors.appendChild(message);
+  setTimeout(() => message.remove(), 4000);
 }
 
 let createProject = () => {
