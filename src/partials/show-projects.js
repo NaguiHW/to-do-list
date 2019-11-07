@@ -26,6 +26,7 @@ let createProjectBox = element => {
   description.innerHTML = element.description;
   let priority = document.createElement('p');
   priority.innerHTML = `Priority: ${element.priority}`;
+  priorityColor(priority);
   let date = document.createElement('p');
   date.innerHTML = element.date;
   project.appendChild(title);
@@ -53,6 +54,16 @@ let storedProjects = () => {
   allProjects = DataBase.getProjects();
   let lastProject = allProjects[allProjects.length-1]
   createProjectBox(lastProject);
+}
+
+let priorityColor = (priority) => {
+  if (priority.innerText === 'Priority: Low'){
+    priority.setAttribute('class', 'low');
+  } else if (priority.innerText === 'Priority: Medium'){
+    priority.setAttribute('class', 'medium');
+  } else if (priority.innerText === 'Priority: High'){
+    priority.setAttribute('class', 'high');
+  }
 }
 
 

@@ -90,13 +90,28 @@ i {
   option {
     color: white;
   }
-  #low {
+  #low, .low {
     background-color: green;
   }
-  #medium {
+  #medium, .medium {
     background-color: orange;
   }
-  #high {
+  #high, .high {
     background-color: red;
   }
+}
+.low {
+  background-color: green;
+  color: white;
+  margin-bottom: 5px;
+}
+.medium {
+  background-color: orange;
+  color: white;
+  margin-bottom: 5px;
+}
+.high {
+  background-color: red;
+  color: white;
+  margin-bottom: 5px;
 }
