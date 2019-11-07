@@ -1,12 +1,11 @@
 /* eslint-disable import/prefer-default-export */
-import { Project } from './project-class'
+import { Project, cleanArray } from './project-class';
 
 const title = document.querySelector('#title-project-input');
 const description = document.querySelector('#description');
 const date = document.querySelector('#date');
 const priority = document.querySelector('#priority');
 const task = document.querySelector('.new-task');
-let taskArray = [];
 
 class DataBase {
   static getProjects() {
@@ -30,7 +29,7 @@ class DataBase {
 const storage = () => {
   const newProject = new Project(title.value, description.value, date.value, priority.value, task);
   DataBase.addProject(newProject);
-  taskArray = [];
+  cleanArray();
 };
 
 export { storage, DataBase };
