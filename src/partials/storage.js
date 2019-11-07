@@ -37,10 +37,15 @@ class Project {
     this.date = date;
     this.priority = priority;
     if (task.childElementCount > 0) {
-      for (let i = 0; i<task.childElementCount; i++){
-        let todo = new ToDo(document.getElementById(i).value);
+      let newArr = Array.from(document.getElementsByClassName('task-input'));
+      newArr.forEach( e => {
+        let todo = new ToDo(e.value)
         taskArray.push(todo);
-      }
+      });
+      // for (let i = 0; i<task.childElementCount; i++){
+      //   let todo = new ToDo(document.getElementById(i).value);
+      //   taskArray.push(todo);
+      // }
       // task.forEach(e =>{
       //   console.log("hello")
       // })
