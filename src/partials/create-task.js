@@ -1,6 +1,7 @@
 let createTaskButton = document.querySelector('.fa-plus');
 let newTask = document.querySelector('.new-task');
 let n = 0;
+let deleteTask = document.getElementById(`${n}`)
 
 let createTask = () => {
   createTaskButton.addEventListener('click', ()=> {
@@ -15,6 +16,12 @@ let createTask = () => {
     taskContainer.appendChild(delIcon);
     newTask.appendChild(taskContainer);
     n++;
+    
+    delIcon.addEventListener('click', () => {
+      delIcon.parentElement.remove()
+      n--;
+    })
+
   });
 }
     let counter = () =>{

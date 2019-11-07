@@ -41,6 +41,9 @@ class Project {
         let todo = new ToDo(document.getElementById(i).value);
         taskArray.push(todo);
       }
+      // task.forEach(e =>{
+      //   console.log("hello")
+      // })
       this.task = taskArray;
     }
   }
