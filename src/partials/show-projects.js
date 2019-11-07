@@ -12,6 +12,8 @@ let createProjectBox = element => {
       toDoList.appendChild(item);
     }
   }
+  let toDoListTitle = document.createElement('p');
+  toDoListTitle.innerHTML = '<b>To do:</b>'
   let delButton = document.createElement('i');
   delButton.setAttribute('class', 'fas fa-trash')
   delButton.addEventListener('click', () => {
@@ -28,10 +30,11 @@ let createProjectBox = element => {
   priority.innerHTML = `Priority: ${element.priority}`;
   priorityColor(priority);
   let date = document.createElement('p');
-  date.innerHTML = element.date;
+  date.innerHTML = `<b>Due date:</b><br>${element.date}`;
   project.appendChild(title);
   project.appendChild(description);
   project.appendChild(priority);
+  project.appendChild(toDoListTitle);
   project.appendChild(toDoList);
   project.appendChild(date);
   project.appendChild(delButton);

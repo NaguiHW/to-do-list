@@ -21,11 +21,12 @@
             <textarea name="description" id="description" placeholder="Description" class="textarea" required></textarea>
           </div>
           <div class="date">
-            <input type="date" name="date" id="date" class="input">
+            <input type="date" name="date" id="date" class="input" required>
           </div>
           <div class="priority">
             <p>Project priority:</p>
-            <select name="priority" id="priority">
+            <select name="priority" id="priority" required>
+              <option value=""></option>
               <option value="Low" id="low">Low</option>
               <option value="Medium" id="medium">Medium</option>
               <option value="High" id="high">High</option>
