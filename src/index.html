@@ -8,40 +8,42 @@
   <script src="https://kit.fontawesome.com/8c83d8fb94.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <div class="content">
-    <div class="title">
-      <h1>To Do</h1>
-    </div>
-    <button class="new-project-button">Create Project</button>
-    <div class="new-project hide">
-      <div class="project-form">
-        <div class="title-project">
-          <input type="text" name="title-project" id="title-project-input" placeholder="Title">
-        </div>
-        <div class="description">
-          <textarea name="description" id="description" cols="30" rows="10" placeholder="Description"></textarea>
-        </div>
-        <div class="date">
-          <input type="date" name="date" id="date">
-        </div>
-        <div class="priority">
-          <p>Project priority:</p>
-          <input type="color" name="priority" id="priority">
-        </div>
-        <div class="task-area">
-          <div class="name">
-            <p for="task-list">Add new tasks</p>
+  <div class="container">
+    <div class="title is-1">To Do</div>
+    <div class="todo-body">
+      <button class="new-project-button button is-link">Create Project</button>
+      <div class="new-project hide">
+        <div class="project-form">
+          <div class="title-project">
+            <input type="text" name="title-project" id="title-project-input" placeholder="Title" class="input">
           </div>
-          <div class="checklists">
+          <div class="description">
+            <textarea name="description" id="description" placeholder="Description" class="textarea"></textarea>
+          </div>
+          <div class="date">
+            <input type="date" name="date" id="date" class="input">
+          </div>
+          <div class="priority">
+            <p>Project priority:</p>
+            <select name="priority" id="priority">
+              <option value="Low" id="low">Low</option>
+              <option value="Medium" id="medium">Medium</option>
+              <option value="High" id="high">High</option>
+            </select>
+          </div>
+          <div class="task-area">
+            <div class="name">
+              <p for="task-list">Add new tasks</p>
+            </div>
             <div class="new-task"></div>
             <i class="fas fa-plus"></i>
           </div>
+          <button class="post-project-button button is-success">Create</button>
         </div>
-        <button class="post-project-button">Create</button>
       </div>
-    </div>
-    <table class="projects">
-      <tbody id="project-list"></tbody>
+      <table class="projects">
+        <tbody id="project-list"></tbody>
+      </table>
     </div>
   </div>
 </body>

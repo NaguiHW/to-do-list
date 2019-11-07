@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/NaguiHW/to-do-list#readme",
   "devDependencies": {
+    "bulma": "^0.8.0",
     "css-loader": "^3.2.0",
     "file-loader": "^4.2.0",
     "html-webpack-plugin": "^3.2.0",

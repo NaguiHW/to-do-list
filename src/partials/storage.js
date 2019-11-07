@@ -35,7 +35,7 @@ class Project {
     this.title = title;
     this.description = description;
     this.date = date;
-    this.priopriority = priority;
+    this.priority = priority;
     if (task.childElementCount > 0) {
       for (let i = 0; i<task.childElementCount; i++){
         let todo = new ToDo(document.getElementById(i).value);
@@ -49,7 +49,6 @@ class Project {
 let storage = () => {
   let newProject = new Project(title.value, description.value, date.value, priority.value, task);
   DataBase.addProject(newProject);
-  console.log(newProject);
   taskArray = [];
 }
 
