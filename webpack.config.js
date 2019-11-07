@@ -12,12 +12,12 @@ module.exports = {
   module: {
     rules: [
       {
-        test:  /\.s[ac]ss$/i,
+        test: /\.s[ac]ss$/i,
         use: [
           MiniCssExtractPlugin.loader,
           'css-loader',
-          'sass-loader'
-        ]
+          'sass-loader',
+        ],
       },
       {
         test: /\.(jpg|png|jpeg|gif)/,
@@ -27,15 +27,15 @@ module.exports = {
             options: {
               name: '[name].[ext]',
               outputPath: 'static/',
-              useRelativePath: true
-            }
+              useRelativePath: true,
+            },
           },
           {
             loader: 'image-webpack-loader',
             options: {
               mozjpeg: {
                 progressive: true,
-                quality: 65
+                quality: 65,
               },
               // optipng.enabled: false will disable optipng
               optipng: {
@@ -43,20 +43,20 @@ module.exports = {
               },
               pngquant: {
                 quality: [0.65, 0.90],
-                speed: 4
+                speed: 4,
               },
               gifsicle: {
                 interlaced: false,
               },
               // the webp option will enable WEBP
               webp: {
-                quality: 75
-              }
-            }
-          }
-        ]
-      }
-    ]
+                quality: 75,
+              },
+            },
+          },
+        ],
+      },
+    ],
   },
 
   plugins: [
@@ -68,11 +68,11 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]-styles.css'
-    })
-  ]
+      filename: 'css/[name]-styles.css',
+    }),
+  ],
 };

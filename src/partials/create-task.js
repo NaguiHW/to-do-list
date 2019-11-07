@@ -1,27 +1,22 @@
-let createTaskButton = document.querySelector('.fa-plus');
-let newTask = document.querySelector('.new-task');
-let n = 0;
+/* eslint-disable import/prefer-default-export */
+const createTaskButton = document.querySelector('.fa-plus');
+const newTask = document.querySelector('.new-task');
 
-let createTask = () => {
-  createTaskButton.addEventListener('click', ()=> {
-    let taskContainer = document.createElement('div');
-    let input = document.createElement('input');
-    let delIcon = document.createElement('i');
+const createTask = () => {
+  createTaskButton.addEventListener('click', () => {
+    const taskContainer = document.createElement('div');
+    const input = document.createElement('input');
+    const delIcon = document.createElement('i');
     delIcon.setAttribute('class', 'fas fa-minus-square');
     input.setAttribute('type', 'text');
-    input.classList.add('task-input')
+    input.classList.add('task-input');
     taskContainer.appendChild(input);
     taskContainer.appendChild(delIcon);
     newTask.appendChild(taskContainer);
-    n++;
     delIcon.addEventListener('click', () => {
-      delIcon.parentElement.remove()
-    })
+      delIcon.parentElement.remove();
+    });
   });
-}
+};
 
-let counter = () =>{
-  n = 0;
-}
-
-export { createTask, counter }
+export { createTask };

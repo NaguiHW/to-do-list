@@ -1,18 +1,17 @@
-import { counter } from './create-task'
+/* eslint-disable import/prefer-default-export */
 
-let title = document.querySelector('#title-project-input');
-let description = document.querySelector('#description');
-let date = document.querySelector('#date');
-let priority = document.querySelector('#priority');
-let taskRemove = document.querySelector('.new-task');
+const title = document.querySelector('#title-project-input');
+const description = document.querySelector('#description');
+const date = document.querySelector('#date');
+const priority = document.querySelector('#priority');
+const taskRemove = document.querySelector('.new-task');
 
-let clearForm = () => {
+const clearForm = () => {
   title.value = '';
   description.value = '';
   date.value = '';
   priority.value = '';
-  taskRemove.innerHTML = ''
-  counter();  
-}
+  taskRemove.innerHTML = '';
+};
 
-export { clearForm }
+export { clearForm };
