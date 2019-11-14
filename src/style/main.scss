@@ -1,13 +1,14 @@
-.hide {
-  display: none;
+* {
+  box-sizing: border-box;
 }
 
-.title {
-  text-align: center;
+.hide {
+  display: none !important;
 }
 
 .container {
   .title {
+    text-align: center;
     padding: 15px;
   }
 }
@@ -18,100 +19,195 @@
   align-items: center;
 }
 
-.box {
-  width: 400px;
-  margin: 10px;
-  display: flex !important;
-  flex-direction: column;
-  .title{
-    margin-bottom: 0 !important;
-  }
-  i {
-    align-self: center;
-    background-color: red;
-    color: white;
-    &:hover {
-      background-color: rgb(116, 0, 0);
-    }
-  }
-}
-
 i {
-  border: 1px solid black;
   padding: 8px;
   border-radius: 100%;
   cursor: pointer;
 }
 
-.project-form {
+.create-area {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  .priority {
+  width: 900px;
+  .create-project-area {
+    width: 50%;
     display: flex;
     flex-direction: column;
-    align-items: center;  
-  }
-  .task-area {
-    display: flex;
-    flex-direction: column;
-    align-items: center;  
-    .new-task {
+    align-items: center;
+    button {
+      align-self: center;
+    }
+    .project-form {
       display: flex;
       flex-direction: column;
-      align-items: center;  
+      align-items: center;
+      input {
+        width: 300px;
+        margin: 5px;
+      }
     }
   }
-  input {
-    width: 300px;
-    margin: 5px;
-  }
-  textarea {
-    width: 300px;
-    height: 150px;
-    resize: none;
-  }
-  #date {
-    width: 150px;
-  }
-  i {
-    background-color: green;
-    cursor: pointer;
-    color: white;
-    margin: 5px;
-    &:hover {
-      background-color: rgb(0, 46, 0);
+  .create-task-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #create-task {
+      margin: 5px;
     }
-  }
-  p {
-    font-weight: bold;
-    margin: 5px;
-  }
-  option {
-    color: white;
-  }
-  #low, .low {
-    background-color: green;
-  }
-  #medium, .medium {
-    background-color: orange;
-  }
-  #high, .high {
-    background-color: red;
+    .task-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 270px;
+        margin: 5px;
+      }
+      button {
+        margin: 5px;
+      }
+      select {
+        margin: 5px;
+      }
+    }
   }
 }
+
+.all-projects {
+  width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  .project {
+    width: 290px;
+    background-color: white;
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    .task-title {
+      text-align: center;
+      font-size: 35px;
+      font-weight: bold;
+    }
+    .task {
+      display: flex;
+      margin: 5px;
+      cursor: pointer;
+      .task-description {
+        width: 85%;
+        padding: 5px 5px 5px 10px;
+      }
+      .task-delete {
+        width: 15%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          align-self: center;
+          background-color: red;
+          color: white;
+          &:hover {
+            background-color: rgb(116, 0, 0);
+          }
+        }
+      }
+    }
+    .true {
+      background-color: rgb(170, 226, 195);
+    }
+    .false {
+      background-color: rgb(243, 196, 196);
+    }
+    .buttons {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      margin: 10px 5px;
+      button {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .task-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    input {
+      width: 270px;
+      margin: 5px;
+    }
+    button {
+      margin: 5px;
+    }
+  }
+}
+
+table {
+  tr{
+    width: 900px;
+    display: flex;
+    flex-wrap: wrap;
+    .project {
+      width: 290px;
+      background-color: white;
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      .task-title {
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      .task {
+        display: flex;
+        margin: 5px;
+        cursor: pointer;
+        .task-description {
+          width: 85%;
+          padding: 5px 5px 5px 10px;
+        }
+        .task-delete {
+          width: 15%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          i {
+            align-self: center;
+            background-color: red;
+            color: white;
+            &:hover {
+              background-color: rgb(116, 0, 0);
+            }
+          }
+        }
+      }
+      .true {
+        background-color: rgb(170, 226, 195);
+      }
+      .false {
+        background-color: rgb(243, 196, 196);
+      }
+      .buttons {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 10px 5px;
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 .low {
-  background-color: green;
-  color: white;
-  margin-bottom: 5px;
+  border-left: 5px solid green;
 }
+
 .medium {
-  background-color: orange;
-  color: white;
-  margin-bottom: 5px;
+  border-left: 5px solid orange;
 }
+
 .high {
-  background-color: red;
-  color: white;
-  margin-bottom: 5px;
+  border-left: 5px solid red;
 }
