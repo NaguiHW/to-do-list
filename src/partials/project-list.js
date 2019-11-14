@@ -9,7 +9,6 @@ let createProjectList = () => {
     option.setAttribute('value', `${projects[i].title}`);
     option.innerHTML = projects[i].title;
     projectList.appendChild(option);
-    console.log(projects[i].title);
   }
 }
 

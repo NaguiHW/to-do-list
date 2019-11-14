@@ -1,6 +1,7 @@
 import { errorForm } from "./error-message";
-import { Project } from "./project-class";
-import { Task } from "./task-class"
+// import { Project } from "./project-class";
+// import { Task } from "./task-class"
+import { storageTask } from "./storage-task";
 
 let createTaskButton = document.getElementById('create-task-button');
 let taskName = document.querySelector('#task-form-title');
@@ -13,15 +14,14 @@ let createTask = () => {
             errorForm();
         } else {
             e.preventDefault();
-            Project().task.push(Task())
-            console.log(Project)
+            storageTask();
+            // Project().task.push(Task())
+            // console.log(Project)
         }
     })
 }
 
 export { createTask }
-
-
 
 // import { clearForm } from "./clear-form";
 // import { errorForm } from "./error-message";
