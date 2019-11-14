@@ -11,7 +11,7 @@ let taskPriority = document.querySelector('#priority');
 let createTask = () => {
     createTaskButton.addEventListener('click', e => {
         if (taskName.value === '' || taskDate.value === '' || taskPriority.value === '') {
-            errorForm();
+            errorForm('Please fill all the fields');
         } else {
             e.preventDefault();
             storageTask();

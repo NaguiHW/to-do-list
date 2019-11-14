@@ -7,25 +7,28 @@ let postProjectButton  = document.querySelector('.post-project-button');
 const showButton = document.querySelector('.new-project-button');
 const form = document.querySelector('.project-form');
 const title = document.querySelector('#title-project-input');
+let titleArray = [];
 
 let createProject = () => {
   postProjectButton.addEventListener('click', e => {
     if (title.value === '') {
-      errorForm();
+      errorForm('Please fill all the fields');
     } else {
       e.preventDefault();
       let allProjects = DataBase.getProjects();
+
       for (let i = 0; i < allProjects.length; i++) {
-        if (title.value === allProjects[i].title) {
-          console.log('true');
-        } else {
+        titleArray.push(allProjects[i].title);
+      }
+      if (titleArray.includes(title.value)){
+        errorForm('Title is already used');
+      } else {
           storage();
           form.classList.add('hide');
           showButton.innerText = 'Create Project';
           showButton.classList.remove('close-form');
           appendProject();
           clearForm();
-        }
       }
     }
   })

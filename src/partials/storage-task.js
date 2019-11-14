@@ -10,11 +10,13 @@ let project = document.querySelector('#project-list')
 const storageTask = () => {
   const newTask = new Task(taskName.value, taskDescription.value, taskDate.value, taskPriority.value);
   let allProjects = DataBase.getProjects();
+  console.log(allProjects);
   for (let i = 0; i < allProjects.length; i++) {
     if (project.value === allProjects[i].title) {
-      console.log('true');
+      allProjects[i].task.push(newTask);
     }
   }
+  console.log(allProjects);
   // console.log(newTask);
   // DataBase.addProject(newProject);
 };
