@@ -26,7 +26,6 @@ let createProject = () => {
           storage();
           form.classList.add('hide');
           showButton.innerText = 'Create Project';
-          showButton.classList.remove('close-form');
           appendProject();
           clearForm();
       }
