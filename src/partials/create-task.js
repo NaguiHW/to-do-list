@@ -10,7 +10,7 @@ let taskPriority = document.querySelector('#priority');
 
 let createTask = () => {
     createTaskButton.addEventListener('click', e => {
-        if (taskName === '' || taskDate === '' || taskPriority === '') {
+        if (taskName.value === '' || taskDate.value === '' || taskPriority.value === '') {
             errorForm();
         } else {
             e.preventDefault();

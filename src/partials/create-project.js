@@ -1,6 +1,6 @@
 import { clearForm } from "./clear-form";
 import { errorForm } from "./error-message";
-import { storage } from "./storage";
+import { storage, DataBase } from "./storage";
 import { appendProject } from "./append-project";
 
 let postProjectButton  = document.querySelector('.post-project-button');
@@ -14,12 +14,19 @@ let createProject = () => {
       errorForm();
     } else {
       e.preventDefault();
-      storage();
-      form.classList.add('hide');
-      showButton.innerText = 'Create Project';
-      showButton.classList.remove('close-form');
-      appendProject();
-      clearForm();
+      let allProjects = DataBase.getProjects();
+      for (let i = 0; i < allProjects.length; i++) {
+        if (title.value === allProjects[i].title) {
+          console.log('true');
+        } else {
+          storage();
+          form.classList.add('hide');
+          showButton.innerText = 'Create Project';
+          showButton.classList.remove('close-form');
+          appendProject();
+          clearForm();
+        }
+      }
     }
   })
 }
