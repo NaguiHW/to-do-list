@@ -2,6 +2,7 @@ import { clearForm } from "./clear-form";
 import { errorForm } from "./error-message";
 import { storage, DataBase } from "./storage";
 import { appendProject } from "./append-project";
+import { createProjectList, clearProjectList } from "./project-list";
 
 let postProjectButton  = document.querySelector('.post-project-button');
 const showButton = document.querySelector('.new-project-button');
@@ -28,6 +29,8 @@ let createProject = () => {
           showButton.innerText = 'Create Project';
           appendProject();
           clearForm();
+          clearProjectList();
+          createProjectList();
       }
     }
   })
