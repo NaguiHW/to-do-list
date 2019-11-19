@@ -1,13 +1,14 @@
-import { clearForm } from "./clear-form";
-import { createProjectList, clearProjectList } from "./project-list";
-import { createTask } from "./create-task"
+/* eslint-disable import/prefer-default-export */
+import { clearForm } from './clear-form';
+import { createProjectList, clearProjectList } from './project-list';
+import { createTask } from './create-task';
 
-let showTaskFormButton = document.querySelector('#create-task');
-let form = document.querySelector('.task-form');
+const showTaskFormButton = document.querySelector('#create-task');
+const form = document.querySelector('.task-form');
 
 const showTaskForm = () => {
   createTask();
-  showTaskFormButton.addEventListener('click', e => {
+  showTaskFormButton.addEventListener('click', (e) => {
     if (e.target.innerText === 'Close Form') {
       form.classList.add('hide');
       showTaskFormButton.innerText = 'Create Task';
@@ -17,8 +18,8 @@ const showTaskForm = () => {
       form.classList.remove('hide');
       createProjectList();
       showTaskFormButton.innerText = 'Close Form';
-    };
-  })
-}
+    }
+  });
+};
 
 export { showTaskForm };

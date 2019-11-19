@@ -1,5 +1,6 @@
-import { DataBase } from "./storage";
-import { createProjectBox } from "./append-project";
+/* eslint-disable import/prefer-default-export */
+import { DataBase } from './storage';
+import { createProjectBox } from './append-project';
 
 let allProjects = [];
 

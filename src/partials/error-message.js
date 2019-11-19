@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 const errors = document.querySelector('.errors');
 
 const errorForm = (errorMessage) => {

@@ -1,39 +1,40 @@
-import { clearForm } from "./clear-form";
-import { errorForm } from "./error-message";
-import { storage, DataBase } from "./storage";
-import { appendProject } from "./append-project";
-import { createProjectList, clearProjectList } from "./project-list";
+/* eslint-disable import/prefer-default-export */
+import { clearForm } from './clear-form';
+import { errorForm } from './error-message';
+import { storage, DataBase } from './storage';
+import { appendProject } from './append-project';
+import { createProjectList, clearProjectList } from './project-list';
 
-let postProjectButton  = document.querySelector('.post-project-button');
+const postProjectButton = document.querySelector('.post-project-button');
 const showButton = document.querySelector('.new-project-button');
 const form = document.querySelector('.project-form');
 const title = document.querySelector('#title-project-input');
-let titleArray = [];
+const titleArray = [];
 
-let createProject = () => {
-  postProjectButton.addEventListener('click', e => {
+const createProject = () => {
+  postProjectButton.addEventListener('click', (e) => {
     if (title.value === '') {
       errorForm('Please fill all the fields');
     } else {
       e.preventDefault();
-      let allProjects = DataBase.getProjects();
+      const allProjects = DataBase.getProjects();
 
-      for (let i = 0; i < allProjects.length; i++) {
+      for (let i = 0; i < allProjects.length; i += 1) {
         titleArray.push(allProjects[i].title);
       }
-      if (titleArray.includes(title.value)){
+      if (titleArray.includes(title.value)) {
         errorForm('Title is already used');
       } else {
-          storage();
-          form.classList.add('hide');
-          showButton.innerText = 'Create Project';
-          appendProject();
-          clearForm();
-          clearProjectList();
-          createProjectList();
+        storage();
+        form.classList.add('hide');
+        showButton.innerText = 'Create Project';
+        appendProject();
+        clearForm();
+        clearProjectList();
+        createProjectList();
       }
     }
-  })
-}
+  });
+};
 
 export { createProject };

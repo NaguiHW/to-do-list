@@ -1,19 +1,20 @@
-import { DataBase } from "./storage"
+/* eslint-disable import/prefer-default-export */
+import { DataBase } from './storage';
 
-let projectList = document.querySelector('#project-list');
+const projectList = document.querySelector('#project-list');
 
-let createProjectList = () => {
+const createProjectList = () => {
   const projects = DataBase.getProjects();
-  for (let i = 0; i < projects.length; i++) {
-    let option = document.createElement('option');
+  for (let i = 0; i < projects.length; i += 1) {
+    const option = document.createElement('option');
     option.setAttribute('value', `${projects[i].title}`);
     option.innerHTML = projects[i].title;
     projectList.appendChild(option);
   }
-}
+};
 
-let clearProjectList = () => {
+const clearProjectList = () => {
   projectList.innerHTML = '';
-}
+};
 
 export { createProjectList, clearProjectList };

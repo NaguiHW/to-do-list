@@ -1,17 +1,19 @@
-import { Task } from "./task-class";
-import { DataBase } from "./storage";
+/* eslint-disable import/prefer-default-export */
+import { Task } from './task-class';
+import { DataBase } from './storage';
 
-let taskName = document.querySelector('#task-form-title');
-let taskDescription = document.querySelector('#task-form-description');
-let taskDate = document.querySelector('#date');
-let taskPriority = document.querySelector('#priority');
-let project = document.querySelector('#project-list')
+const taskName = document.querySelector('#task-form-title');
+const taskDescription = document.querySelector('#task-form-description');
+const taskDate = document.querySelector('#date');
+const taskPriority = document.querySelector('#priority');
+const project = document.querySelector('#project-list');
 let index;
 
 const storageTask = () => {
-  const newTask = new Task(taskName.value, taskDescription.value, taskDate.value, taskPriority.value);
-  let allProjects = DataBase.getProjects();
-  for (let i = 0; i < allProjects.length; i++) {
+  const newTask = new Task(taskName.value, taskDescription.value,
+    taskDate.value, taskPriority.value);
+  const allProjects = DataBase.getProjects();
+  for (let i = 0; i < allProjects.length; i += 1) {
     if (project.value === allProjects[i].title) {
       allProjects[i].task.push(newTask);
       index = i;

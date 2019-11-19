@@ -1,4 +1,5 @@
-import { clearProjectList, createProjectList } from "./project-list";
+/* eslint-disable import/prefer-default-export */
+import { clearProjectList, createProjectList } from './project-list';
 
 const deleteProject = (e) => {
   const index = e.parentElement.parentElement.parentElement.cellIndex;

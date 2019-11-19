@@ -1,9 +1,11 @@
-import { DataBase } from "./storage";
+/* eslint-disable import/prefer-default-export */
+import { DataBase } from './storage';
 
-let updateStatus = (e, task) => {
-  let databaseProjects = DataBase.getProjects();
-  let projectIndex = e.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement.cellIndex;
-  let taskIndex = e.parentElement.parentElement.parentElement.rowIndex;
+const updateStatus = (e, task) => {
+  const databaseProjects = DataBase.getProjects();
+  const projectIndex = e.parentElement.parentElement.parentElement.parentElement
+    .parentElement.parentElement.parentElement.cellIndex;
+  const taskIndex = e.parentElement.parentElement.parentElement.rowIndex;
   if (databaseProjects[projectIndex].task[taskIndex].status) {
     databaseProjects[projectIndex].task[taskIndex].status = false;
     localStorage.setItem('project', JSON.stringify(databaseProjects));
@@ -15,6 +17,6 @@ let updateStatus = (e, task) => {
     task.classList.remove('false');
     task.classList.add('true');
   }
-}
+};
 
 export { updateStatus };
