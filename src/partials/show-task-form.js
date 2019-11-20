@@ -11,11 +11,12 @@ const showTaskForm = () => {
   showTaskFormButton.addEventListener('click', (e) => {
     if (e.target.innerText === 'Close Form') {
       form.classList.add('hide');
-      showTaskFormButton.innerText = 'Create Task';
+      showTaskFormButton.innerText = 'Add Task To Project';
       clearProjectList();
       clearForm();
-    } else if (e.target.innerText === 'Create Task') {
+    } else if (e.target.innerText === 'Add Task To Project') {
       form.classList.remove('hide');
+      clearProjectList();
       createProjectList();
       showTaskFormButton.innerText = 'Close Form';
     }

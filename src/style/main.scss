@@ -112,10 +112,10 @@ table {
             }
           }
           .edit-icon {
-            background-color: rgb(42, 206, 138);
+            background-color: rgb(223, 160, 43);
             padding: 6.5px 5.5px 9.5px 8.5px;
             &:hover {
-              background-color: rgb(17, 129, 83);
+              background-color: rgb(153, 105, 16);
             }
           }
           .save-icon {
@@ -174,5 +174,34 @@ table {
   flex-direction: column;
   input {
     margin: 3px 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .projects {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .create-area {
+    width: 600px;
+    display: inline;
+    margin: 0 auto;
+    .create-project-area {
+      width: auto;
+    }
+    .create-task-area {
+      width: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .projects {
+    width: 300px;
+  }
+  .create-area {
+    width: 300px;
   }
 }

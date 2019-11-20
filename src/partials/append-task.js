@@ -13,17 +13,21 @@ const taskBox = (newTask, taskArea) => {
   descriptionTask.innerHTML = `${newTask.description}`;
   const dateTask = document.createElement('p');
   dateTask.innerHTML = `Due date: ${newTask.date}`;
+  const statusTask = document.createElement('p');
   taskDescription.appendChild(titleTask);
   taskDescription.appendChild(descriptionTask);
   taskDescription.appendChild(dateTask);
   taskDescription.addEventListener('click', (e) => {
-    updateStatus(e.target, task);
+    updateStatus(e.target, task, statusTask);
   });
   if (newTask.status) {
+    statusTask.innerHTML = 'Status: Complete' 
     task.classList.add('true');
   } else {
+    statusTask.innerHTML = 'Status: Pending' 
     task.classList.add('false');
   }
+  taskDescription.appendChild(statusTask);
   if (newTask.priority === 'Low') {
     task.classList.add('low');
   } else if (newTask.priority === 'Medium') {
@@ -33,7 +37,7 @@ const taskBox = (newTask, taskArea) => {
   }
   const taskDelete = document.createElement('div');
   const icon = document.createElement('i');
-  icon.setAttribute('class', 'fas fa-minus-square delete-icon');
+  icon.setAttribute('class', 'fas fa-trash delete-icon');
   icon.addEventListener('click', (e) => {
     const databaseProjects = DataBase.getProjects();
     const projectIndex = e.target.parentElement.parentElement.parentElement.parentElement

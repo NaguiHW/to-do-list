@@ -22,7 +22,7 @@ const createTask = () => {
       storageTask();
       appendTask(index, project.value);
       form.classList.add('hide');
-      showTaskFormButton.innerText = 'Create Task';
+      showTaskFormButton.innerText = 'Add Task To Project';
       clearTaskForm();
       clearProjectList();
     }
