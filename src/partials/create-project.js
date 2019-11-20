@@ -1,9 +1,8 @@
 /* eslint-disable import/prefer-default-export */
-import { clearForm } from './clear-form';
-import { errorForm } from './error-message';
 import { storage, DataBase } from './storage';
 import { appendProject } from './append-project';
 import { createProjectList, clearProjectList } from './project-list';
+import { DOM_module } from './DOM_module';
 
 const postProjectButton = document.querySelector('.post-project-button');
 const showButton = document.querySelector('.new-project-button');
@@ -14,7 +13,7 @@ const titleArray = [];
 const createProject = () => {
   postProjectButton.addEventListener('click', (e) => {
     if (title.value === '') {
-      errorForm('Please fill all the fields');
+      DOM_module.errorForm('Please fill all the fields');
     } else {
       e.preventDefault();
       const allProjects = DataBase.getProjects();
@@ -23,13 +22,13 @@ const createProject = () => {
         titleArray.push(allProjects[i].title);
       }
       if (titleArray.includes(title.value)) {
-        errorForm('Title is already used');
+        DOM_module.errorForm('Title is already used');
       } else {
         storage();
         form.classList.add('hide');
         showButton.innerText = 'Create Project';
         appendProject();
-        clearForm();
+        DOM_module.clearForm();
         clearProjectList();
         createProjectList();
       }
