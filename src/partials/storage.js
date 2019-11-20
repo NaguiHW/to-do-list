@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Project } from './project-class';
+import { Project } from './classes';
 
 const title = document.querySelector('#title-project-input');
 

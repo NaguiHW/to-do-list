@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Project } from './project-class';
-import { Task } from './task-class';
+import { Task, Project } from './classes';
 import { DataBase } from './storage';
 
 const mockProject = () => {

@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export */
-import { Task } from './task-class';
+import { Task } from './classes';
 import { DataBase } from './storage';
 
 const taskName = document.querySelector('#task-form-title');

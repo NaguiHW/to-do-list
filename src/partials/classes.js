@@ -1,5 +1,12 @@
 /* eslint-disable import/prefer-default-export */
 
+class Project {
+  constructor(title) {
+    this.title = title;
+    this.task = [];
+  }
+}
+
 class Task {
   constructor(taskName, description, date, priority) {
     this.taskName = taskName;
@@ -9,4 +16,5 @@ class Task {
   }
 }
 
-export { Task };
+
+export { Project, Task };
