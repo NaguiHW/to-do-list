@@ -1,10 +1,21 @@
 /* eslint-disable import/prefer-default-export */
 import { DataBase } from './storage';
-import { deleteProject } from './delete-project';
 import { taskBox } from './append-task';
+import { clearProjectList, createProjectList } from './project-list';
 
 const allProjects = document.querySelector('#table-row');
 let getProjects = [];
+
+const deleteProject = (e) => {
+  const index = e.parentElement.parentElement.parentElement.cellIndex;
+  const delProject = JSON.parse(localStorage.project);
+  delProject.splice(index, 1);
+  localStorage.setItem('project', JSON.stringify(delProject));
+  const row = document.querySelector('#table-row');
+  row.deleteCell(index);
+  clearProjectList();
+  createProjectList();
+};
 
 const createProjectBox = (element) => {
   const project = document.createElement('div');
