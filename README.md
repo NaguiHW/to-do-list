@@ -13,4 +13,4 @@ Kalib Hackin - [naguihw@gmail.com](naguihw@gmail.com)
 5. Open [http://localhost:9000/](http://localhost:9000/) in your browser.
 
 
-Live Demo: https://cdn.statically.io/gh/NaguiHW/to-do-list/release/dist/index.html
+Live Demo: https://raw.githack.com/NaguiHW/to-do-list/release/dist/index.html
