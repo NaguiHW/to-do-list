@@ -29,12 +29,22 @@ const showTaskForm = () => {
   createTask();
   showTaskFormButton.addEventListener('click', (e) => {
     if (e.target.innerText === 'Close Form') {
+<<<<<<< HEAD:src/partials/forms.js
       taskForm.classList.add('hide');
       showTaskFormButton.innerText = 'Create Task';
       clearProjectList();
       clearForm();
     } else if (e.target.innerText === 'Create Task') {
       taskForm.classList.remove('hide');
+=======
+      form.classList.add('hide');
+      showTaskFormButton.innerText = 'Add Task To Project';
+      clearProjectList();
+      clearForm();
+    } else if (e.target.innerText === 'Add Task To Project') {
+      form.classList.remove('hide');
+      clearProjectList();
+>>>>>>> b276f291462bcffffac7dcf824ba3cc03695ba25:src/partials/show-task-form.js
       createProjectList();
       showTaskFormButton.innerText = 'Close Form';
     }
