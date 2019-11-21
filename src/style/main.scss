@@ -1,0 +1,207 @@
+* {
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none !important;
+}
+
+.container {
+  .title {
+    text-align: center;
+    padding: 15px;
+  }
+}
+
+.todo-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create-area {
+  display: flex;
+  width: 900px;
+  .create-project-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    button {
+      align-self: center;
+    }
+    .project-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 300px;
+        margin: 5px;
+      }
+    }
+  }
+  .create-task-area {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    #create-task {
+      margin: 5px;
+    }
+    .task-form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      input {
+        width: 270px;
+        margin: 5px;
+      }
+      button {
+        margin: 5px;
+      }
+      select {
+        margin: 5px;
+      }
+    }
+  }
+}
+
+.projects {
+  width: 900px;
+}
+table {
+  tr{
+    display: flex;
+    flex-wrap: wrap;
+    .project {
+      width: 290px;
+      background-color: white;
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      .task-title {
+        text-align: center;
+        font-size: 35px;
+        font-weight: bold;
+      }
+      .task {
+        display: flex;
+        margin: 5px;
+        cursor: pointer;
+        .task-description {
+          width: 85%;
+          padding: 5px 5px 5px 10px;
+        }
+        .task-options {
+          width: 15%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+          align-items: center;
+          i {
+            align-self: center;
+            border-radius: 100%;
+            color: white;
+            cursor: pointer;
+          }
+          .delete-icon {
+            background-color: rgb(255, 0, 0);
+            padding: 8px 9px;
+            &:hover {
+              background-color: rgb(110, 10, 10);
+            }
+          }
+          .edit-icon {
+            background-color: rgb(223, 160, 43);
+            padding: 6.5px 5.5px 9.5px 8.5px;
+            &:hover {
+              background-color: rgb(153, 105, 16);
+            }
+          }
+          .save-icon {
+            background-color: rgb(42, 206, 138);
+            padding: 7px 8px 9px 10px;
+            &:hover {
+              background-color: rgb(17, 129, 83);
+            }
+          }
+        }
+      }
+      .true {
+        background-color: rgb(170, 226, 195);
+        &:hover {
+          background-color: rgb(97, 185, 137);
+        }
+      }
+      .false {
+        background-color: rgb(243, 196, 196);
+        &:hover {
+          background-color: rgb(201, 129, 129);
+        }
+      }
+      .buttons {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        margin: 10px 5px;
+        button {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.low {
+  border-left: 10px solid green;
+}
+
+.medium {
+  border-left: 10px solid orange;
+}
+
+.high {
+  border-left: 10px solid red;
+}
+
+.task {
+  width: 280px;
+}
+
+.task-description-edit {
+  display: flex;
+  flex-direction: column;
+  input {
+    margin: 3px 0;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .projects {
+    width: 600px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .create-area {
+    width: 600px;
+    display: inline;
+    margin: 0 auto;
+    .create-project-area {
+      width: auto;
+    }
+    .create-task-area {
+      width: auto;
+    }
+  }
+}
+
+@media only screen and (max-width: 650px) {
+  .projects {
+    width: 300px;
+  }
+  .create-area {
+    width: 300px;
+  }
+}
