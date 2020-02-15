@@ -1,4 +1,4 @@
-# Restaurant Page Project
+# To-Do List Project
 This a project for the Microverse main curriculum
 ### Author:
 Bernardo Garza - [bernardo.g.landa@gmail.com](bernardo.g.landa@gmail.com)
