@@ -1,5 +1,6 @@
 # To-Do List Project
-This a project for the Microverse main curriculum
+This is a To Do application.<br>
+The data is saved in the local storage.
 
 ## Authors:
 Bernardo Garza - [bernardo.g.landa@gmail.com](bernardo.g.landa@gmail.com)
@@ -33,6 +34,7 @@ The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
 ## Future features
+- User Authentication.
 - Create the backend to save the changes
 
 ## Built with
