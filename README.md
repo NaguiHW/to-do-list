@@ -40,4 +40,4 @@ You will also see any lint errors in the console.
 ## Built with
 - HTML5
 - CSS3
-- Javascript
+- JavaScript
